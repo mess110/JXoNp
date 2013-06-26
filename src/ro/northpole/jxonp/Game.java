@@ -15,10 +15,10 @@ public class Game {
 	}
 
 	public boolean join(String playerName) {
-		if (p1.equals("")) {
+		if (p1 == null) {
 			p1 = playerName;
 			return true;
-		} else if (p2.equals("")) {
+		} else if (p2 == null) {
 			p2 = playerName;
 			return true;
 		} else {
@@ -45,7 +45,7 @@ public class Game {
 		return board.getWinner();
 	}
 
-	private boolean isStarted() {
-		return !p1.equals("") && !p2.equals("");
+	public boolean isStarted() {
+		return p1 != null && p2 != null;
 	}
 }
